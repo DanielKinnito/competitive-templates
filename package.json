@@ -1,0 +1,39 @@
+{
+  "name": "competitive-templates",
+  "displayName": "Competitive Programming Templates",
+  "description": "Template manager for competitive programming",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:competitive-templates.newTemplate",
+    "onCommand:competitive-templates.loadTemplate"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "competitive-templates.newTemplate",
+        "title": "CP: Create New Template"
+      },
+      {
+        "command": "competitive-templates.loadTemplate",
+        "title": "CP: Load Template"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^16.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^4.9.0"
+  }
+}
