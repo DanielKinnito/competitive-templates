@@ -1,22 +1,28 @@
 import * as vscode from 'vscode';
+import * as fs from 'fs';
 import { TemplateManager } from './templates/templateManager';
 
 export function activate(context: vscode.ExtensionContext) {
     const templateManager = new TemplateManager(context);
 
     let newTemplateCommand = vscode.commands.registerCommand('competitive-templates.newTemplate', async () => {
-        const templateName = await vscode.window.showInputBox({
-            prompt: 'Enter template name',
-            placeHolder: 'e.g., dp_template'
+        // Open file picker
+        const fileUris = await vscode.window.showOpenDialog({
+            canSelectMany: false,
+            filters: {
+                'Text Files': ['txt', 'cpp', 'py', 'java']
+            },
+            title: 'Select Template File'
         });
 
-        if (templateName) {
-            const content = await vscode.window.showInputBox({
-                prompt: 'Enter template content',
-                placeHolder: 'Template content here...'
+        if (fileUris && fileUris[0]) {
+            const templateName = await vscode.window.showInputBox({
+                prompt: 'Enter template name',
+                placeHolder: 'e.g., dp_template'
             });
 
-            if (content) {
+            if (templateName) {
+                const content = await fs.promises.readFile(fileUris[0].fsPath, 'utf-8');
                 await templateManager.createTemplate(templateName, content);
                 vscode.window.showInformationMessage(`Template ${templateName} created successfully!`);
             }
