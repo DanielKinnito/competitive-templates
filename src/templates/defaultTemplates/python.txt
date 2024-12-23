@@ -7,9 +7,6 @@ def main():
     for _ in range(t):
         solve()
 
-if __name__ == "__main__":
-    main()
-
 def binary_search(arr, target):
     left, right = 0, len(arr) - 1
     while left <= right:
@@ -21,3 +18,32 @@ def binary_search(arr, target):
         else:
             right = mid - 1
     return -1
+
+def dynamic_programming(n):
+    dp = [0] * (n + 1)
+    if n >= 1:
+        dp[1] = 1
+
+    for i in range(2, n + 1):
+        dp[i] = dp[i - 1] + dp[i - 2]
+
+    return dp[n]
+
+def bfs(graph, start):
+    visited = set()  # To track visited nodes
+    queue = deque([start])  # Queue to manage the order of exploration
+
+    while queue:
+        node = queue.popleft()  # Dequeue from the front of the queue
+        if node not in visited:
+            print(node, end=" ")  # Process the node
+            visited.add(node)  # Mark node as visited
+            
+            for neighbor in graph[node]:  # Explore each neighbor
+                if neighbor not in visited:
+                    queue.append(neighbor) 
+
+
+if __name__ == "__main__":
+    main()
+
