@@ -29,6 +29,20 @@ def dynamic_programming(n):
 
     return dp[n]
 
+def bfs(graph, start):
+    visited = set()  # To track visited nodes
+    queue = deque([start])  # Queue to manage the order of exploration
+
+    while queue:
+        node = queue.popleft()  # Dequeue from the front of the queue
+        if node not in visited:
+            print(node, end=" ")  # Process the node
+            visited.add(node)  # Mark node as visited
+            
+            for neighbor in graph[node]:  # Explore each neighbor
+                if neighbor not in visited:
+                    queue.append(neighbor) 
+
 
 if __name__ == "__main__":
     main()
