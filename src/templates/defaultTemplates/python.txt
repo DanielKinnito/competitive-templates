@@ -43,6 +43,7 @@ def bfs(graph, start):
                 if neighbor not in visited:
                     queue.append(neighbor) 
 
+
 def dfsGraph(root):
     result = []
     stack = []
@@ -57,7 +58,23 @@ def dfsGraph(root):
                     stack.append(node.children[key])
     return result
 
-    
+def bfsTree(root):
+    result = []
+    queue = deque()
+    queue.append(root)
+
+    while queue:
+        head = queue.popleft()
+        result.append(head.val)
+        
+        if head.left:
+            queue.append(head.left)
+        if head.right:
+            queue.append(head.right)
+            
+    return result
+
+
 if __name__ == "__main__":
     main()
 
