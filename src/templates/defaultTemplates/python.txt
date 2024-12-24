@@ -88,6 +88,19 @@ def dfsGraph(root):
                     stack.append(node.children[key])
     return result
 
+def bitmasking_template(n):
+    """
+    Template for iterating through all subsets using bitmasking.
+    n: Size of the set (0 to n-1).
+    """
+    for mask in range(1 << n):  # 2^n subsets
+        subset = []
+        for i in range(n):
+            if mask & (1 << i):  # Check if the i-th element is in the subset
+                subset.append(i)
+        print(f"Mask: {bin(mask)[2:].zfill(n)}, Subset: {subset}")
+
+
     
 if __name__ == "__main__":
     main()
