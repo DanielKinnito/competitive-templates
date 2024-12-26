@@ -1,0 +1,17 @@
+{
+  "dp_template": {
+    "prefix": "dp_template",
+    "body": [
+      "dadkajdfadf"
+    ],
+    "description": "Template for dp_template"
+  },
+  "test_function": {
+    "prefix": "test_function",
+    "body": [
+      "def test_fun():\r",
+      "    print(\"Test function called\")"
+    ],
+    "description": "Template for test_function"
+  }
+}

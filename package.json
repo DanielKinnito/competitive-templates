@@ -23,6 +23,29 @@
       {
         "command": "competitive-templates.loadTemplate",
         "title": "CP: Load Template"
+      },
+      {
+        "command": "competitive-templates.createFromSelection",
+        "title": "Create CP Template from Selection"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorHasSelection",
+          "command": "competitive-templates.createFromSelection",
+          "group": "competitive"
+        }
+      ]
+    },
+    "snippets": [
+      {
+        "language": "cpp",
+        "path": "./snippets/cpp.json"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/python.json"
       }
     ]
   },

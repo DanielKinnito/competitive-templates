@@ -1,9 +1,11 @@
 import * as vscode from 'vscode';
 import * as fs from 'fs';
 import { TemplateManager } from './templates/templateManager';
+import { SnippetManager } from './templates/snippetManager';
 
 export function activate(context: vscode.ExtensionContext) {
     const templateManager = new TemplateManager(context);
+    const snippetManager = new SnippetManager(context, templateManager);
 
     let newTemplateCommand = vscode.commands.registerCommand('competitive-templates.newTemplate', async () => {
         // Open file picker
@@ -24,6 +26,7 @@ export function activate(context: vscode.ExtensionContext) {
             if (templateName) {
                 const content = await fs.promises.readFile(fileUris[0].fsPath, 'utf-8');
                 await templateManager.createTemplate(templateName, content);
+                await snippetManager.updateSnippets();
                 vscode.window.showInformationMessage(`Template ${templateName} created successfully!`);
             }
         }
@@ -46,7 +49,38 @@ export function activate(context: vscode.ExtensionContext) {
         }
     });
 
-    context.subscriptions.push(newTemplateCommand, loadTemplateCommand);
+    // Create template from selection
+    let createFromSelectionCommand = vscode.commands.registerCommand(
+        'competitive-templates.createFromSelection',
+        async () => {
+            const editor = vscode.window.activeTextEditor;
+            if (!editor) {
+                return;
+            }
+
+            const selection = editor.selection;
+            const selectedText = editor.document.getText(selection);
+
+            const templateName = await vscode.window.showInputBox({
+                prompt: 'Enter template name',
+                placeHolder: 'e.g., unionfind_template'
+            });
+
+            if (templateName) {
+                await templateManager.createTemplate(templateName, selectedText);
+                await snippetManager.updateSnippets();
+                vscode.window.showInformationMessage(
+                    `Template ${templateName} created successfully!`
+                );
+            }
+        }
+    );
+
+    context.subscriptions.push(
+        createFromSelectionCommand,
+        newTemplateCommand,
+        loadTemplateCommand
+    );
 }
 
 export function deactivate() {}
