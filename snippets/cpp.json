@@ -1,17 +1,89 @@
 {
-  "dp_template": {
-    "prefix": "dp_template",
+  "unionfind": {
+    "prefix": "uf",
     "body": [
-      "dadkajdfadf"
+      "class UnionFind {",
+      "private:",
+      "    vector<int> parent, rank;",
+      "",
+      "public:",
+      "    UnionFind(int size) {",
+      "        parent.resize(size);",
+      "        rank.resize(size, 0);",
+      "        for (int i = 0; i < size; i++) {",
+      "            parent[i] = i;",
+      "        }",
+      "    }",
+      "",
+      "    int find(int x) {",
+      "        if (parent[x] != x) {",
+      "            parent[x] = find(parent[x]); // Path compression",
+      "        }",
+      "        return parent[x];",
+      "    }",
+      "",
+      "    void unionSets(int x, int y) {",
+      "        int rootX = find(x);",
+      "        int rootY = find(y);",
+      "",
+      "        if (rootX != rootY) {",
+      "            if (rank[rootX] > rank[rootY]) {",
+      "                parent[rootY] = rootX;",
+      "            } else if (rank[rootX] < rank[rootY]) {",
+      "                parent[rootX] = rootY;",
+      "            } else {",
+      "                parent[rootY] = rootX;",
+      "                rank[rootX]++;",
+      "            }",
+      "        }",
+      "    }",
+      "",
+      "    bool connected(int x, int y) {",
+      "        return find(x) == find(y);",
+      "    }",
+      "};"
     ],
-    "description": "Template for dp_template"
+    "description": "UnionFind data structure implementation"
   },
-  "test_function": {
-    "prefix": "test_function",
+  "binarysearch": {
+    "prefix": "bs",
     "body": [
-      "def test_fun():\r",
-      "    print(\"Test function called\")"
+      "int binarySearch(const vector<int>& arr, int target) {",
+      "    int left = 0, right = arr.size() - 1;",
+      "    while (left <= right) {",
+      "        int mid = left + (right - left) / 2;",
+      "        if (arr[mid] == target) {",
+      "            return mid;",
+      "        } else if (arr[mid] < target) {",
+      "            left = mid + 1;",
+      "        } else {",
+      "            right = mid - 1;",
+      "        }",
+      "    }",
+      "    return -1;",
+      "}"
     ],
-    "description": "Template for test_function"
+    "description": "Binary Search implementation"
+  },
+  "bitmask": {
+    "prefix": "bm",
+    "body": [
+      "void bitmaskingTemplate(int n) {",
+      "    for (int mask = 0; mask < (1 << n); mask++) {",
+      "        vector<int> subset;",
+      "        for (int i = 0; i < n; i++) {",
+      "            if (mask & (1 << i)) {",
+      "                subset.push_back(i);",
+      "            }",
+      "        }",
+      "        cout << \"Mask: \" << bitset<32>(mask).to_string().substr(32 - n) << \", Subset: \";",
+      "        for (int num : subset) {",
+      "            cout << num << \" \";",
+      "        }",
+      "        cout << endl;",
+      "    }",
+      "}"
+    ],
+    "description": "Bitmasking template for generating subsets"
   }
 }
