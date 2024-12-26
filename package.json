@@ -50,14 +50,17 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./"
+    "vscode:prepublish": "webpack --mode production",
+    "compile": "webpack --mode development",
+    "watch": "webpack --mode development --watch"
   },
   "devDependencies": {
     "@types/node": "^16.18.122",
     "@types/vscode": "^1.96.0",
-    "typescript": "^4.9.5"
+    "ts-loader": "^9.5.1",
+    "typescript": "^4.9.5",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
   },
   "keywords": [],
   "author": "",
