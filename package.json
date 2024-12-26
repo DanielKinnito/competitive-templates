@@ -4,7 +4,7 @@
   "description": "Template manager for competitive programming",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.80.0"
+    "vscode": "^1.96.0"
   },
   "categories": [
     "Other"
@@ -66,5 +66,14 @@
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^8.57.1"
-  }
+  },
+  "publisher": "Kinnito",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DanielKinnito/competitive-templates.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DanielKinnito/competitive-templates/issues"
+  },
+  "homepage": "https://github.com/DanielKinnito/competitive-templates#readme"
 }
