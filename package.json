@@ -78,5 +78,10 @@
   "bugs": {
     "url": "https://github.com/DanielKinnito/competitive-templates/issues"
   },
-  "homepage": "https://github.com/DanielKinnito/competitive-templates#readme"
+  "homepage": "https://github.com/DanielKinnito/competitive-templates#readme",
+  "icon": "images/cpt-logo.png",
+  "galleryBanner": {
+    "color": "#C80000",
+    "theme": "dark"
+  }
 }

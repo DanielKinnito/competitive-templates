@@ -2,6 +2,11 @@ import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
 
+/**
+ * Manages template storage and retrieval
+ * @class TemplateManager
+ */
+
 export class TemplateManager {
     private storageUri: vscode.Uri;
 
@@ -16,6 +21,12 @@ export class TemplateManager {
         }
     }
 
+    /**
+     * Creates a new template
+     * @param {string} name - Template name
+     * @param {string} content - Template content
+     * @returns {Promise<void>}
+     */
     async createTemplate(name: string, content: string): Promise<void> {
         const templatePath = path.join(this.storageUri.fsPath, `${name}.txt`);
         await fs.promises.writeFile(templatePath, content);

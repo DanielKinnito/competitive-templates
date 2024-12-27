@@ -1,8 +1,17 @@
+/**
+ * Main extension file that handles activation and command registration
+ * @module extension
+ */
+
 import * as vscode from 'vscode';
 import * as fs from 'fs';
 import { TemplateManager } from './templates/templateManager';
 import { SnippetManager } from './templates/snippetManager';
 
+/**
+ * Activates the extension
+ * @param {vscode.ExtensionContext} context - The VS Code extension context
+ */
 export function activate(context: vscode.ExtensionContext) {
     const templateManager = new TemplateManager(context);
     const snippetManager = new SnippetManager(context, templateManager);

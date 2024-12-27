@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+
+\title{Competitive Programming Templates VSCode Extension}
+\author{Daniel Mekonnen}
+\date{March 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This report details the development of a Visual Studio Code extension for managing competitive programming templates, created as part of the Open Source Software Development course.
+
+\section{Project Overview}
+The extension provides functionality for:
+\begin{itemize}
+    \item Template management through snippets
+    \item Right-click template creation
+    \item File-based template import
+    \item Multi-language support
+\end{itemize}
+
+\section{Technical Implementation}
+\subsection{Core Components}
+\begin{itemize}
+    \item TemplateManager: Handles template storage and retrieval
+    \item SnippetManager: Manages VS Code snippets
+    \item Extension Commands: Implements user interface actions
+\end{itemize}
+
+\section{Development Process}
+\subsection{Tools Used}
+\begin{itemize}
+    \item TypeScript
+    \item VS Code Extension API
+    \item Webpack for bundling
+    \item Git for version control
+\end{itemize}
+
+\section{Challenges and Solutions}
+\begin{itemize}
+    \item Challenge: Global template storage
+    \item Solution: Used VS Code's ExtensionContext
+    \item Challenge: Snippet integration
+    \item Solution: Implemented dynamic snippet generation
+\end{itemize}
+
+\section{Future Improvements}
+\begin{itemize}
+    \item Template categories
+    \item Cloud synchronization
+    \item Template sharing
+\end{itemize}
+
+\section{Conclusion}
+This project demonstrates the practical application of open-source development principles while creating a useful tool for competitive programmers.
+
+\end{document} 
