@@ -1,77 +1,66 @@
 # Competitive Programming Templates
 
-A Visual Studio Code extension for managing and using competitive programming templates efficiently.
+A powerful VS Code extension that helps competitive programmers manage and use code templates efficiently through snippets and commands.
 
-## Features
+## 🚀 Features
 
-- **Create Templates**: Import template files directly from your system
-- **Load Templates**: Quick access to your templates through VS Code commands
-- **Multiple Language Support**: Works with various programming languages (C++, Python, Java, etc.)
-- **Easy Integration**: Seamlessly integrates with VS Code's command palette
+### 1. Snippet-based Template Usage
+- Start typing template names to get suggestions
+- Available snippets:
+  - `uf` - UnionFind data structure
+  - `bs` - Binary Search implementation
+  - `bm` - Bitmasking template
+  - And more!
 
-## Installation
+### 2. Right-Click Template Creation
+- Select any code in your editor
+- Right-click and choose "Create CP Template from Selection"
+- Name your template
+- Instantly available as a snippet!
+
+### 3. File-based Template Import
+- Import existing template files
+- Supports multiple languages (C++, Python, Java)
+- Templates are stored globally
+
+## 📥 Installation
 
 1. Open VS Code
-2. Press `Ctrl+P` (or `Cmd+P` on macOS)
-3. Type `ext install competitive-templates`
-4. Press Enter
+2. Go to Extensions (Ctrl+Shift+X)
+3. Search for "Competitive Programming Templates"
+4. Click Install
 
-## Usage
+## 🎯 Quick Start
 
-### Creating a Template
+### Using Snippets
+1. Open a .cpp or .py file
+2. Type one of these triggers:
+   - `uf` for UnionFind
+   - `bs` for Binary Search
+   - `bm` for Bitmasking
+3. Press Tab to insert the template
 
-1. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS)
-2. Type `CP: Create New Template`
-3. Select your template file from the file picker
-4. Enter a name for your template
+### Creating New Templates
+Method 1: From Selection
+1. Select code in editor
+2. Right-click
+3. Choose "Create CP Template from Selection"
+4. Enter template name
 
-### Loading a Template
+Method 2: From File
+1. Press Ctrl+Shift+P
+2. Type "CP: Create New Template"
+3. Select your template file
+4. Enter template name
 
-1. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS)
-2. Type `CP: Load Template`
-3. Select the template you want to use
-4. The template will be inserted at your cursor position
+## 🔧 Requirements
+- Visual Studio Code ^1.96.0
 
-## Requirements
+## 🤝 Contributing
+See our [Contributing Guide](CONTRIBUTING.md) for details.
 
-- Visual Studio Code ^1.80.0
-- Node.js & npm (for development)
+## 📝 License
+MIT License - see [LICENSE](LICENSE)
 
-## Extension Settings
-
-This extension contributes the following commands:
-
-* `competitive-templates.newTemplate`: Create a new template
-* `competitive-templates.loadTemplate`: Load an existing template
-
-## Development
-
-1. Clone the repository
-
-```bash
-    git clone https://github.com/yourusername/competitive-templates.git
-```
-
-2. Install Dependencies
-
-```bash
-    npm install
-```
-
-3. Press F5 to start debugging
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Support
-
-If you encounter any problems or have suggestions, please [open an issue](https://github.com/yourusername/competitive-templates/issues).
+## 🆘 Support
+Found a bug? Have a feature request? [Open an issue](https://github.com/DanielKinnito/competitive-templates/issues)
