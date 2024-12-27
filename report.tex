@@ -3,60 +3,127 @@
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
 
 \title{Competitive Programming Templates VSCode Extension}
-\author{Daniel Mekonnen}
-\date{March 2024}
+\author{Group 5}
+\date{\today}
 
 \begin{document}
 
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+
+        \textbf{\Huge Competitive Programming Templates VSCode Extension}
+
+        \vspace{1.5cm}
+
+        \textbf{\Large Course: Open Source Software Paradigms (SWEG5109)}
+
+        \vspace{1.5cm}
+
+        \textbf{\Large Submitted By:}
+        \\
+        Daniel Mekonnen ETS 0351/13
+        \\
+        Doi Amdisa  ETS 0385/13
+        \\
+        Fasika G/Hana   ETS 0492/13
+        \\
+        Haweten Girma   ETS 0595/13
+        \\
+        Hawi Abdi   ETS 0596/13
+
+        \vspace{1cm}
+
+        \textbf{\Large Department of Software Engineering}
+        \\
+        Addis Ababa Science and Technology University
+
+        \vfill
+        \textbf{\Large Submitted To: Instructor Binyam}\\
+        \textbf{\Large Submission Date: December 2024}
+    \end{center}
+\end{titlepage}
+
 \maketitle
 
+\begin{abstract}
+This report provides a comprehensive overview of the development and features of a Visual Studio Code extension aimed at simplifying the management of competitive programming templates. Developed as part of the Open Source Software Development course, the project integrates multi-language support, user-friendly interfaces, and extensible functionality. This document highlights the technical implementation, challenges faced, solutions adopted, and future prospects for the extension.
+\end{abstract}
+
 \section{Introduction}
-This report details the development of a Visual Studio Code extension for managing competitive programming templates, created as part of the Open Source Software Development course.
+Competitive programming often requires repetitive coding of standard templates. This project aimed to address this inefficiency by developing a Visual Studio Code extension that enables competitive programmers to manage and utilize templates effectively. The project aligns with the principles of open-source software development, fostering collaboration and knowledge sharing within the developer community.
 
 \section{Project Overview}
-The extension provides functionality for:
+The "Competitive Programming Templates" extension offers the following features:
 \begin{itemize}
-    \item Template management through snippets
-    \item Right-click template creation
-    \item File-based template import
-    \item Multi-language support
+    \item Easy management of templates using snippets.
+    \item Creation of templates via a user-friendly right-click context menu.
+    \item Import functionality for file-based templates.
+    \item Multi-language support to cater to diverse programming needs.
 \end{itemize}
 
 \section{Technical Implementation}
 \subsection{Core Components}
+The extension is built using the following core components:
 \begin{itemize}
-    \item TemplateManager: Handles template storage and retrieval
-    \item SnippetManager: Manages VS Code snippets
-    \item Extension Commands: Implements user interface actions
+    \item \textbf{TemplateManager}: Manages the storage, retrieval, and organization of templates.
+    \item \textbf{SnippetManager}: Handles the integration and generation of VS Code snippets.
+    \item \textbf{Extension Commands}: Implements the user interface and facilitates interaction between users and the extension.
+\end{itemize}
+
+\subsection{Development Tools and Frameworks}
+The extension was developed using:
+\begin{itemize}
+    \item \textbf{TypeScript}: For a robust and type-safe development experience.
+    \item \textbf{VS Code Extension API}: To leverage built-in extension capabilities.
+    \item \textbf{Webpack}: For efficient module bundling and packaging.
+    \item \textbf{Git}: For version control and collaborative development.
 \end{itemize}
 
 \section{Development Process}
-\subsection{Tools Used}
-\begin{itemize}
-    \item TypeScript
-    \item VS Code Extension API
-    \item Webpack for bundling
-    \item Git for version control
-\end{itemize}
+\subsection{Workflow}
+The project followed a systematic workflow:
+\begin{enumerate}
+    \item \textbf{Initial Planning}: Defined the scope and requirements of the extension.
+    \item \textbf{Environment Setup}: Configured the development environment using the VS Code Extension API and Webpack.
+    \item \textbf{Feature Implementation}: Incrementally developed core features such as template management and snippet integration.
+    \item \textbf{Testing and Debugging}: Ensured functionality through unit and integration testing.
+\end{enumerate}
+
+\subsection{Version Control}
+All code changes were managed using Git, ensuring a clear history of commits and facilitating collaboration among team members.
 
 \section{Challenges and Solutions}
 \begin{itemize}
-    \item Challenge: Global template storage
-    \item Solution: Used VS Code's ExtensionContext
-    \item Challenge: Snippet integration
-    \item Solution: Implemented dynamic snippet generation
+    \item \textbf{Challenge: Global template storage.}
+    \begin{itemize}
+        \item \textbf{Solution:} Leveraged VS Code's \texttt{ExtensionContext} to store templates persistently.
+    \end{itemize}
+    \item \textbf{Challenge: Dynamic snippet integration.}
+    \begin{itemize}
+        \item \textbf{Solution:} Implemented a system for on-the-fly generation of snippets, ensuring seamless user experience.
+    \end{itemize}
 \end{itemize}
 
 \section{Future Improvements}
+Several enhancements are planned to extend the functionality and usability of the extension:
 \begin{itemize}
-    \item Template categories
-    \item Cloud synchronization
-    \item Template sharing
+    \item Categorization of templates for better organization.
+    \item Cloud synchronization to enable access across devices.
+    \item Sharing features to foster collaboration among competitive programmers.
 \end{itemize}
 
 \section{Conclusion}
-This project demonstrates the practical application of open-source development principles while creating a useful tool for competitive programmers.
+The development of the "Competitive Programming Templates" extension underscores the practical application of open-source principles and software development methodologies. By simplifying the management of programming templates, the extension aims to enhance the productivity and efficiency of competitive programmers. Future iterations will focus on expanding the feature set and fostering community contributions.
 
-\end{document} 
+\section*{References}
+\begin{itemize}
+    \item GitHub Repository: \href{https://github.com/DanielKinnito/competitive-templates}{https://github.com/DanielKinnito/competitive-templates}
+    \item Visual Studio Code Extension API Documentation: \href{https://code.visualstudio.com/api}{https://code.visualstudio.com/api}
+\end{itemize}
+
+\end{document}
