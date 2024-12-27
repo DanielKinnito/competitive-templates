@@ -2,7 +2,7 @@
   "name": "competitive-templates",
   "displayName": "Competitive Programming Templates",
   "description": "Template manager for competitive programming",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.96.0"
   },
