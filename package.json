@@ -1,8 +1,8 @@
 {
   "name": "competitive-templates",
   "displayName": "Competitive Programming Templates",
-  "description": "Template manager for competitive programming",
-  "version": "0.0.3",
+  "description": "Template manager for competitive programming with cloud sync via Supabase",
+  "version": "0.2.0",
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -11,7 +11,9 @@
   ],
   "activationEvents": [
     "onCommand:competitive-templates.newTemplate",
-    "onCommand:competitive-templates.loadTemplate"
+    "onCommand:competitive-templates.loadTemplate",
+    "onCommand:competitive-templates.createFromSelection",
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -62,10 +64,17 @@
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1"
   },
-  "keywords": [],
+  "keywords": [
+    "competitive programming",
+    "templates",
+    "snippets",
+    "supabase",
+    "cloud"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^8.57.1"
