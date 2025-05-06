@@ -46,16 +46,29 @@ export class TemplateManager {
         // Use the correct table name string. Type inference handles the rest.
         // The TemplateInsert type ensures we provide the correct shape.
         const newTemplate: TemplateInsert = { name, content };
+        console.log(`Attempting to insert template: ${JSON.stringify(newTemplate)}`); // Log data being sent
+
         const { data, error } = await supabase
             .from('templates') // Just the table name string, no generic needed here
-            .insert(newTemplate); // Pass the correctly typed object
+            .insert(newTemplate)
+            .select(); // Add .select() to get the inserted data back
 
         if (error) {
-            console.error('Error creating template in Supabase:', error);
+            console.error('Supabase insert error:', JSON.stringify(error, null, 2)); // Log the full error object
+            vscode.window.showErrorMessage(`Supabase error: ${error.message} (Code: ${error.code}). Check console for details.`); // Show more specific error
             throw new Error(`Failed to create template: ${error.message}`);
         }
 
-        console.log('Template created successfully in Supabase:', data);
+        // Log the data returned by Supabase after insert
+        console.log('Supabase insert success, returned data:', JSON.stringify(data, null, 2));
+
+        if (!data || data.length === 0) {
+            console.warn('Supabase insert succeeded but returned no data. Check RLS policies and table permissions.');
+            // Optionally inform the user, though the operation might have technically succeeded
+            // vscode.window.showWarningMessage('Template saved, but confirmation data was not returned from Supabase.');
+        }
+
+        // console.log('Template created successfully in Supabase:', data); // Original log, now replaced by more detailed one
     }
 
     /**

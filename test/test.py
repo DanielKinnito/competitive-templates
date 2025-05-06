@@ -1,9 +1,8 @@
 t = int(input())
 for _ in range(t):
     s = input().strip()
-    print(is_consistent(s))
-    
-t = int(input())
-for _ in range(t):
-    s = input().strip()
-    print(is_consistent(s))
+    print(main(s))
+
+def main(s):
+    return s
+
